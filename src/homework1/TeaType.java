@@ -1,0 +1,5 @@
+package homework1;
+
+public enum TeaType {
+    HOTGREENTEA, ICEGREENTEA, ICEMILKTEA, HOTMILKTEA, ICELEMONTEA,HOTLEMONTEA;
+}
