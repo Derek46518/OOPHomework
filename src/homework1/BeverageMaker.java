@@ -8,14 +8,10 @@ public abstract class BeverageMaker {
     public void pourInCup() {
         System.out.println("倒進杯子");
     }
-    public void brew(){
+    public abstract void brew();
+    public abstract void addCondiments();
 
-    }
-    public void addCondiments(){
-
-    }
-
-    public void addIce(){}
+    public abstract void addIce();
     public final void prepare() {
         boilWater();     // 步驟1
         brew();          // 步驟2

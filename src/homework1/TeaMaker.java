@@ -2,8 +2,13 @@ package homework1;
 
 public class TeaMaker extends BeverageMaker{
     TeaType type;
+    IceType iceType;
     public TeaMaker(){
         type = TeaType.HOTGREENTEA;
+    }
+    public TeaMaker(TeaType type, IceType iceType){
+        this.type = type;
+        this.iceType = iceType;
     }
     public TeaMaker(TeaType type){
         this.type = type;
@@ -18,7 +23,7 @@ public class TeaMaker extends BeverageMaker{
         System.out.println("加入牛奶");
     }
     public void addIce(){
-        if(type==TeaType.ICEGREENTEA||type == TeaType.ICELEMONTEA || type ==TeaType.ICEMILKTEA)System.out.println("加冰塊");
+        if(type==TeaType.ICEGREENTEA||type == TeaType.ICELEMONTEA || type ==TeaType.ICEMILKTEA)IceType.add(iceType);
     }
     public void addCondiments(){
         if(type==TeaType.HOTLEMONTEA||type==TeaType.ICELEMONTEA)addLemon();
