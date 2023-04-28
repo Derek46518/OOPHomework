@@ -2,8 +2,8 @@ package homework1;
 
 public enum IceType {
     FULL,SEVEN,HALF,THREE,NONE;
-    public static void add(IceType type){
-        switch(type){
+    public void add(){
+        switch(this){
             case FULL:
                 System.out.println("加正常冰");
                 break;
