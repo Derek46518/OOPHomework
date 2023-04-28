@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyUtility {
-    public static <T extends IComparable> void sort(T[] comparableList) {
+    public <T extends IComparable> void sort(T[] comparableList) {
         if (comparableList.length <= 1) {
             return;
         }
