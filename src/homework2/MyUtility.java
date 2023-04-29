@@ -12,10 +12,8 @@ public class MyUtility {
         int mid = comparableList.length / 2;
         T[] left = Arrays.copyOfRange(comparableList, 0, mid);
         T[] right = Arrays.copyOfRange(comparableList, mid, comparableList.length);
-
         sort(left);
         sort(right);
-
         int i = 0, j = 0, k = 0;
         while (i < left.length && j < right.length) {
             if (left[i].compareTo(right[j]) <= 0) {
@@ -36,15 +34,11 @@ public class MyUtility {
         if (comparableArrayList.size() <= 1) {
             return;
         }
-
-        // 将列表分为两部分，分别进行排序
         int mid = comparableArrayList.size() / 2;
         ArrayList<T> left = new ArrayList<>(comparableArrayList.subList(0, mid));
         ArrayList<T> right = new ArrayList<>(comparableArrayList.subList(mid, comparableArrayList.size()));
         sort(left);
         sort(right);
-
-        // 将排好序的两个子列表合并成一个有序列表
         int i = 0, j = 0, k = 0;
         while (i < left.size() && j < right.size()) {
             if (left.get(i).compareTo(right.get(j)) <= 0) {

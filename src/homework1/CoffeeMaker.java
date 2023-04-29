@@ -1,14 +1,20 @@
 package homework1;
 
 public class CoffeeMaker extends BeverageMaker{
-    CoffeeType type;
-    IceType iceType;
-    SugarType sugarType;
+    private CoffeeType type;
+
     public CoffeeMaker(CoffeeType type){
         this.type = type;
-        this.iceType = IceType.NONE;
         this.sugarType = SugarType.NONE;
+        this.iceType = IceType.NONE;
     }
+
+    public CoffeeMaker(CoffeeType type, SugarType sugarType){
+        this.type = type;
+        this.sugarType = sugarType;
+        this.iceType = IceType.NONE;
+    }
+
     public CoffeeMaker(CoffeeType type, IceType iceType){
         this.type = type;
         this.iceType = iceType;
@@ -16,10 +22,11 @@ public class CoffeeMaker extends BeverageMaker{
     }
 
     public CoffeeMaker(CoffeeType type, IceType iceType, SugarType sugarType){
+        super(iceType,sugarType);
         this.type = type;
-        this.iceType = iceType;
-        this.sugarType = sugarType;
     }
+
+
 
     public CoffeeMaker(){
         type = CoffeeType.ICEAMERICANO;
@@ -31,18 +38,18 @@ public class CoffeeMaker extends BeverageMaker{
     }
 
     public void addMilk(){
-        System.out.println("加牛奶");
+        type.addMilk();
     }
     public void addSugar(){
         sugarType.add();
     }
     public void addIce(){
-        if(type == CoffeeType.ICEAMERICANO || type == CoffeeType.ICELATTE) iceType.add();
 
+        type.addIce(iceType);
     }
 
     public void addCondiments(){
-        if(type==CoffeeType.ICELATTE||type==CoffeeType.HOTLATTE)addMilk();
+        addMilk();
         addSugar();
     }
 }

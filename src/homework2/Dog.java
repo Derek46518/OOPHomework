@@ -51,7 +51,16 @@ public class Dog implements IComparable{
         else if(this.age < other.age){
             return -1;
         }
-        else return this.name.compareTo(other.name);
+        else {
+            if(this.weight> other.weight){
+                return 1;
+            }
+            else if (this.weight< other.weight){
+                return -1;
+            }
+
+            return this.name.compareTo(other.name);
+        }
 
     }
 
@@ -61,7 +70,8 @@ public class Dog implements IComparable{
             throw new IllegalArgumentException("Object is not of type Dog");
         }
         Dog other = (Dog) comparable;
-        if (this.age==other.age) return true;
+        if (this.age!=other.age) return false;
+        else if (this.weight!=other.age) return false;
         else return this.name.equals(other.name);
     }
 }

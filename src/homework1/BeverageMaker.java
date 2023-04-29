@@ -1,6 +1,17 @@
 package homework1;
 
 public abstract class BeverageMaker {
+    protected IceType iceType;
+    protected SugarType sugarType;
+    public BeverageMaker(){
+        this.iceType = IceType.NONE;
+        this.sugarType = SugarType.NONE;
+    }
+    public BeverageMaker(IceType iceType, SugarType sugarType){
+
+        this.iceType = iceType;
+        this.sugarType = sugarType;
+    }
     public void boilWater() {
         System.out.println("煮水");
     }

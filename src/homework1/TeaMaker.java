@@ -1,9 +1,8 @@
 package homework1;
 
 public class TeaMaker extends BeverageMaker{
-    TeaType type;
-    IceType iceType;
-    SugarType sugarType;
+    private TeaType type;
+
     public TeaMaker(){
         this.type = TeaType.HOTGREENTEA;
         this.iceType = IceType.NONE;
@@ -12,15 +11,19 @@ public class TeaMaker extends BeverageMaker{
     public TeaMaker(TeaType type, IceType iceType){
         this.type = type;
         this.iceType = iceType;
-
         this.sugarType = SugarType.NONE;
     }
 
     public TeaMaker(TeaType type, IceType iceType,SugarType sugarType){
+        super(iceType,sugarType);
         this.type = type;
-        this.iceType = iceType;
-        this.sugarType = sugarType;
 
+
+    }
+    public TeaMaker(TeaType type, SugarType sugarType){
+        this.type = type;
+        this.sugarType = sugarType;
+        this.iceType = IceType.NONE;
     }
 
     public TeaMaker(TeaType type){
@@ -29,7 +32,9 @@ public class TeaMaker extends BeverageMaker{
         this.sugarType = SugarType.NONE;
     }
     public void brew(){
-        System.out.println("浸泡茶葉3分鐘");
+        System.out.print("浸泡");
+        type.getType();
+        System.out.println("3分鐘");
     }
     public void addLemon() {
         System.out.println("添加檸檬");
@@ -38,12 +43,12 @@ public class TeaMaker extends BeverageMaker{
         System.out.println("加入牛奶");
     }
     public void addIce(){
-        if(type==TeaType.ICEGREENTEA||type == TeaType.ICELEMONTEA || type ==TeaType.ICEMILKTEA)iceType.add();
-
+        // if(type==TeaType.ICEGREENTEA||type == TeaType.ICELEMONTEA || type ==TeaType.ICEMILKTEA)iceType.add();
+        type.addIce(iceType);
     }
     public void addCondiments(){
-        if(type==TeaType.HOTLEMONTEA||type==TeaType.ICELEMONTEA)addLemon();
-        if(type==TeaType.HOTMILKTEA||type==TeaType.ICEMILKTEA)addMilk();
+        type.addLemon();
+        type.addMilk();
         sugarType.add();
     }
 }
