@@ -4,21 +4,21 @@ public class CoffeeMaker extends BeverageMaker{
     private CoffeeType type;
 
     public CoffeeMaker(CoffeeType type){
+        super();
         this.type = type;
-        this.sugarType = SugarType.NONE;
-        this.iceType = IceType.NONE;
+
     }
 
     public CoffeeMaker(CoffeeType type, SugarType sugarType){
+        super(IceType.NONE,sugarType);
         this.type = type;
-        this.sugarType = sugarType;
-        this.iceType = IceType.NONE;
+
     }
 
     public CoffeeMaker(CoffeeType type, IceType iceType){
+        super(iceType,SugarType.NONE);
         this.type = type;
-        this.iceType = iceType;
-        this.sugarType = SugarType.NONE;
+
     }
 
     public CoffeeMaker(CoffeeType type, IceType iceType, SugarType sugarType){

@@ -4,15 +4,17 @@ public class TeaMaker extends BeverageMaker{
     private TeaType type;
 
     public TeaMaker(){
+        super();
         this.type = TeaType.HOTGREENTEA;
-        this.iceType = IceType.NONE;
-        this.sugarType = SugarType.NONE;
+
     }
     public TeaMaker(TeaType type, IceType iceType){
+        super(iceType,SugarType.NONE);
         this.type = type;
-        this.iceType = iceType;
-        this.sugarType = SugarType.NONE;
+
     }
+
+
 
     public TeaMaker(TeaType type, IceType iceType,SugarType sugarType){
         super(iceType,sugarType);
@@ -21,9 +23,9 @@ public class TeaMaker extends BeverageMaker{
 
     }
     public TeaMaker(TeaType type, SugarType sugarType){
+        super(IceType.NONE,sugarType);
         this.type = type;
-        this.sugarType = sugarType;
-        this.iceType = IceType.NONE;
+
     }
 
     public TeaMaker(TeaType type){

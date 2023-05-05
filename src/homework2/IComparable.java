@@ -1,6 +1,6 @@
 package homework2;
 
-public interface IComparable<T> {
-    public int compareTo(T comparable);
-    public boolean equal(T comparable);
+public interface IComparable {
+    public int compareTo(Object comparable);
+    public boolean equal(Object comparable);
 }

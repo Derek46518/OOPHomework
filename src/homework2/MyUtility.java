@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyUtility {
-    public <T extends IComparable> void sort(T[] comparableList) {
+    public  void sort(IComparable[] comparableList) {
         if (comparableList.length <= 1) {
             return;
         }
 
         int mid = comparableList.length / 2;
-        T[] left = Arrays.copyOfRange(comparableList, 0, mid);
-        T[] right = Arrays.copyOfRange(comparableList, mid, comparableList.length);
+        IComparable[] left = Arrays.copyOfRange(comparableList, 0, mid);
+        IComparable[] right = Arrays.copyOfRange(comparableList, mid, comparableList.length);
         sort(left);
         sort(right);
         int i = 0, j = 0, k = 0;
@@ -30,30 +30,7 @@ public class MyUtility {
         }
     }
 
-    public <T extends IComparable> void sort(ArrayList<T> comparableArrayList) {
-        if (comparableArrayList.size() <= 1) {
-            return;
-        }
-        int mid = comparableArrayList.size() / 2;
-        ArrayList<T> left = new ArrayList<>(comparableArrayList.subList(0, mid));
-        ArrayList<T> right = new ArrayList<>(comparableArrayList.subList(mid, comparableArrayList.size()));
-        sort(left);
-        sort(right);
-        int i = 0, j = 0, k = 0;
-        while (i < left.size() && j < right.size()) {
-            if (left.get(i).compareTo(right.get(j)) <= 0) {
-                comparableArrayList.set(k++, left.get(i++));
-            } else {
-                comparableArrayList.set(k++, right.get(j++));
-            }
-        }
-        while (i < left.size()) {
-            comparableArrayList.set(k++, left.get(i++));
-        }
-        while (j < right.size()) {
-            comparableArrayList.set(k++, right.get(j++));
-        }
-    }
+
 
 
 
