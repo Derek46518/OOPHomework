@@ -1,7 +1,13 @@
 package homework3;
 
 public class SoundBoxControl implements Device{
-    SoundBox box = new SoundBox();
+    SoundBox box;
+    public SoundBoxControl(){
+        this.box = new SoundBox();
+    }
+    public SoundBoxControl(SoundBox box){
+        this.box = box;
+    }
     @Override
     public void execute() {
 

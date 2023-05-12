@@ -5,6 +5,9 @@ public class LightControl implements Device{
     public LightControl(){
         light = new Light();
     }
+    public LightControl(Light light){
+        this.light = light;
+    }
     @Override
     public void execute() {
         int n = light.getBrightness();
