@@ -8,7 +8,7 @@ public abstract class Ingredients {
             ingredients.getIngredient();
         }
     }
-    public void getCost(){
+    public void showCost(){
         System.out.println(this.cost);
     }
 }

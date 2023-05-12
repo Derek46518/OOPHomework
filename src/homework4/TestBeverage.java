@@ -13,6 +13,6 @@ public class TestBeverage {
         in = new BlackTea(in);
         in = new Peral(in);
         in.getIngredient();
-        in.getCost();
+        in.showCost();
     }
 }
